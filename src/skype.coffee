@@ -1,8 +1,7 @@
 Readline = require 'readline'
 Path = require 'path'
 
-Robot   = require('hubot').Robot
-Adapter = require('hubot').Adapter
+{Robot, Adapter, TextMessage} = require Path.resolve __dirname, '..', '..', '..'
 
 class SkypeAdapter extends Adapter
   send: (user, strings...) ->
@@ -32,7 +31,7 @@ class SkypeAdapter extends Adapter
             user.name = decoded.user
         user.room = decoded.room
         return unless decoded.message
-        @receive new Robot.TextMessage user, decoded.message
+        @receive new TextMessage user, decoded.message
     @skype.stderr.on 'data', (data) =>
         console.log "ERR"
         console.log data.toString()
