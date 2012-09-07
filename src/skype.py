@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/arch -i386 /usr/bin/python2.6
+
 import Skype4Py
 import sys
 import json
-
 
 def on_message(message, status):
     if status == Skype4Py.cmsReceived:

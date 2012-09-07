@@ -1,7 +1,8 @@
 Readline = require 'readline'
+Path = require 'path'
 
-Robot   = require("hubot").robot()
-Adapter = require("hubot").adapter()
+Robot   = require('hubot').Robot
+Adapter = require('hubot').Adapter
 
 class SkypeAdapter extends Adapter
   send: (user, strings...) ->
@@ -21,7 +22,7 @@ class SkypeAdapter extends Adapter
     stdin = process.openStdin()
     stdout = process.stdout
 
-    @skype = require('child_process').spawn('./skype.py')
+    @skype = require('child_process').spawn(Path.resolve __dirname, 'skype.py')
     @skype.stdout.on 'data', (data) =>
         decoded = JSON.parse(data.toString())
         user = self.userForName decoded.user
