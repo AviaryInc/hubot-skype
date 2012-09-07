@@ -9,12 +9,12 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/cspicker/hubot-skype/raw/master/LICENSE"
+      "url": "http://github.com/AviaryInc/hubot-skype/raw/master/LICENSE"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/cspicker/hubot-skype.git"
+    "url": "git://github.com/AviaryInc/hubot-skype.git"
   },
   "dependencies": {
     "hubot": ">=2.3.2"
