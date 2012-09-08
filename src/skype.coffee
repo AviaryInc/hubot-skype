@@ -1,7 +1,7 @@
 Readline = require 'readline'
 Path = require 'path'
 
-{Robot, Adapter, TextMessage} = require Path.resolve __dirname, '..', '..', '..'
+{Robot, Adapter, TextMessage} = require 'hubot'
 
 class SkypeAdapter extends Adapter
   send: (user, strings...) ->
@@ -11,7 +11,6 @@ class SkypeAdapter extends Adapter
         room: user.room
         message: out.join('')
     @skype.stdin.write json + '\n'
-    @skype.stdin.flush()
 
   reply: (user, strings...) ->
     @send user, strings...
